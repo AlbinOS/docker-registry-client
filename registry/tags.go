@@ -4,7 +4,7 @@ type tagsResponse struct {
 	Tags []string `json:"tags"`
 }
 
-func (registry *Registry) Tags(repository string) (tags []string, err error) {
+func (registry *Registry) Tags(repository string) ([]string, error) {
 	url := registry.url("/v2/%s/tags/list", repository)
 
 	var response tagsResponse

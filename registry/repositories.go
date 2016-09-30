@@ -4,7 +4,7 @@ type repositoriesResponse struct {
 	Repositories []string `json:"repositories"`
 }
 
-func (registry *Registry) Repositories() (repos []string, err error) {
+func (registry *Registry) Repositories() ([]string, error) {
 	url := registry.url("/v2/_catalog")
 
 	var response repositoriesResponse
